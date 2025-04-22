@@ -1,0 +1,183 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.chart-container {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.label {
+  width: 20%;
+  font-weight: bold;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.bar-inner {
+  width: 60%;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.bar-fill {
+  background-color: #4caf50;
+  height: 20px;
+  text-align: right;
+  line-height: 20px;
+  color: white;
+  padding-right: 5px;
+  transition: width 0.3s ease; /* Smooth transition for width change */
+}
+
+.score {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.margin-top {
+  margin-top: 30px; /* Menambahkan jarak antara tabel dan grafik */
+}
+
+#modal {
+  z-index: 20; /* Pastikan modal di atas elemen lain */
+}
+
+#logoutModal {
+  z-index: 20; /* Pastikan modal di atas elemen lain */
+}
+
+/* CSS untuk tabel */
+.table-container {
+  margin: 20px; /* Margin untuk jarak dengan konten lain */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden; /* Menyembunyikan konten yang melebihi batas */
+}
+
+.table-scroll {
+  max-height: 600px; /* Tinggi maksimum yang sesuai */
+  overflow-y: auto; /* Izinkan scroll jika konten lebih tinggi dari kontainer */
+  margin: 20px 0; /* Tambahkan margin jika perlu */
+}
+
+.data-table {
+  width: 100%; /* Pastikan tabel mengambil lebar penuh */
+  border-collapse: collapse; /* Menghilangkan spasi antar sel */
+  background-color: #ffffff; /* Warna latar belakang tabel */
+}
+
+.data-table thead {
+  background-color: rgb(21, 255, 0); /* Warna latar belakang header */
+  color: white; /* Warna teks header */
+}
+
+.data-table th,
+.data-table td {
+  padding: 12px 15px; /* Ruang di sekitar sel */
+  text-align: left; /* Penjajaran teks */
+  border: none; /* Menghilangkan garis border pada th dan td */
+}
+
+.data-table tbody tr:nth-child(even) {
+  background-color: #f5f5f5; /* Warna latar belakang untuk baris genap */
+}
+
+.data-table tbody tr:hover {
+  background-color: #f0f7fa; /* Efek hover pada baris */
+  transition: background-color 0.3s ease; /* Transisi untuk efek hover */
+}
+
+.table-img {
+  max-width: 100px; /* Ukuran maksimum gambar */
+  height: auto; /* Tinggi otomatis */
+  border-radius: 5px; /* Sudut gambar membulat */
+  display: block; /* Menampilkan gambar sebagai blok */
+  margin-left: auto; /* Menyeimbangkan margin */
+  margin-right: auto; /* Menyeimbangkan margin */
+}
+
+.no-data {
+  text-align: center; /* Penjajaran teks di tengah */
+  padding: 20px; /* Ruang di sekitar teks */
+  background-color: #f8f9fa; /* Warna latar belakang untuk tidak ada data */
+  border-radius: 10px; /* Sudut membulat */
+  color: #6c757d; /* Warna teks */
+}
+
+#imageModal {
+  z-index: 9999; /* Pastikan modal gambar berada di atas elemen lain */
+}
+
+#imageModal .modal-content {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.7
+  ); /* Tambahkan warna latar belakang untuk modal */
+}
+
+#imageModal .modal-content img {
+  max-width: 100%;
+  max-height: 100vh;
+  object-fit: contain;
+  margin: auto;
+  display: block;
+}
+
+/* Tambahkan CSS untuk membuat tombol tambah data berada di atas modal gambar */
+#tambahDataButton {
+  z-index: 10000; /* Pastikan tombol tambah data berada di atas modal gambar */
+  position: relative;
+}
+
+/* Tambahkan CSS untuk membuat teks dan search table tertutupi */
+#imageModal.show {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+}
+
+#imageModal.show .modal-content {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 80%;
+  max-height: 80vh;
+  overflow: auto;
+}
+
+/* Tambahkan CSS untuk membuat teks dan search table tertutupi */
+#imageModal.show .modal-content img {
+  max-width: 100%;
+  max-height: 100vh;
+  object-fit: contain;
+  margin: auto;
+  display: block;
+}
